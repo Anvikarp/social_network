@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>650</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Social Network</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QMainWindow {
+    background-color: #1a1a1a;
+}
+
+QWidget {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 13px;
+}
+
+QLabel {
+    color: #e0e0e0;
+    background-color: transparent;
+}
+
+QFrame {
+    background-color: #242424;
+    border-radius: 10px; /* Slightly larger radius for containers */
+    border: none; /* Remove border from frames for a flatter, cleaner look */
+}
+
+QPushButton {
+    background-color: #2a2a2a; /* Darker background for default buttons */
+    color: #e0e0e0;
+    border: none; /* Remove border for cleaner look */
+    border-radius: 8px; /* Slightly larger radius */
+    padding: 10px 20px; /* More padding */
+    font-weight: 500;
+}
+
+QPushButton:hover {
+    background-color: #3a3a3a; /* Subtle hover effect */
+}
+
+QPushButton:pressed {
+    background-color: #2a2a2a;
+}
+
+QTextEdit {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px; /* Consistent radius */
+    padding: 10px; /* More padding */
+}
+
+QTextEdit:focus {
+    border: 1px solid #505050;
+}
+
+QTableWidget {
+    background-color: #242424;
+    color: #e0e0e0;
+    border: none; /* Remove table border */
+    border-radius: 8px; /* Consistent radius */
+    gridline-color: transparent; /* Remove visible gridlines for a cleaner look */
+}
+
+QTableWidget::item {
+    padding: 10px; /* More vertical padding */
+    border-bottom: 1px solid #303030;
+    word-wrap: break-word;
+}
+
+QTableWidget::item:hover {
+    background-color: #2a2a2a;
+}
+
+QTableWidget::item:selected {
+    background-color: #3a3a3a;
+}
+
+QTableWidget::item:selected:hover {
+    background-color: #404040; /* Slightly different hover for selected item */
+}
+
+QHeaderView::section {
+    background-color: #202020;
+    color: #b0b0b0;
+    border: none;
+    padding: 10px; /* More padding */
+    font-weight: 600;
+    border-top-left-radius: 8px; /* Round the top corners of the header */
+    border-top-right-radius: 8px;
+}
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="loginPage">
+       <layout class="QVBoxLayout" name="loginLayout">
+        <item>
+         <spacer name="verticalSpacer_1">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>150</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QFrame" name="loginWidget">
+          <property name="minimumSize">
+           <size>
+            <width>400</width>
+            <height>280</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>400</width>
+            <height>280</height>
+           </size>
+          </property>
+          <layout class="QVBoxLayout" name="loginFrameLayout">
+           <property name="spacing">
+            <number>20</number>
+           </property>
+           <property name="leftMargin">
+            <number>40</number>
+           </property>
+           <property name="topMargin">
+            <number>40</number>
+           </property>
+           <property name="rightMargin">
+            <number>40</number>
+           </property>
+           <property name="bottomMargin">
+            <number>40</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="titleLabel">
+             <property name="text">
+              <string>Welcome</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font-size: 24px; font-weight: 600; color: #ffffff;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Enter your name</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font-size: 14px; color: #b0b0b0;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTextEdit" name="enterName">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>45</height>
+              </size>
+             </property>
+             <property name="verticalScrollBarPolicy">
+              <enum>Qt::ScrollBarAlwaysOff</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="loginButton">
+<property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>45</height> /* Consistent button height */
+             </size>
+            </property>
+             <property name="text">
+              <string>Login</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+QPushButton {
+    background-color: #007bff; /* Standard, slightly more professional blue */
+    font-size: 14px;
+    font-weight: 600;
+}
+QPushButton:hover {
+    background-color: #0069d9;
+}
+QPushButton:pressed {
+    background-color: #0056b3;
+}
+              </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="messageBox">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: #ff6b6b; font-size: 12px;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>150</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="profilePage">
+       <layout class="QVBoxLayout" name="profileLayout">
+        <property name="spacing">
+         <number>25</number> /* Slightly increased spacing */
+        </property>
+        <property name="leftMargin">
+         <number>40</number> /* Increased margins for more breathing room */
+        </property>
+        <property name="topMargin">
+         <number>40</number>
+        </property>
+        <property name="rightMargin">
+         <number>40</number>
+        </property>
+        <property name="bottomMargin">
+         <number>40</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="profileLabel">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-size: 20px; font-weight: 600; color: #ffffff;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="tablesLayout">
+          <property name="spacing">
+           <number>20</number>
+          </property>
+          <item>
+           <widget class="QFrame" name="friendsFrame">
+            <property name="minimumSize">
+             <size>
+              <width>280</width> /* Increased width for better table content display */
+              <height>280</height> /* Increased height */
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>280</width>
+              <height>280</height>
+             </size>
+            </property>
+            <layout class="QVBoxLayout" name="friendsFrameLayout">
+<property name="spacing">
+             <number>15</number> /* Increased internal spacing */
+            </property>
+            <property name="leftMargin">
+             <number>20</number> /* Increased internal margins */
+            </property>
+            <property name="topMargin">
+             <number>20</number>
+            </property>
+            <property name="rightMargin">
+             <number>20</number>
+            </property>
+            <property name="bottomMargin">
+             <number>20</number>
+            </property>
+             <item>
+              <widget class="QLabel" name="friendsTitle">
+               <property name="text">
+                <string>Friends</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font-size: 14px; font-weight: 600; color: #ffffff;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTableWidget" name="friendsTable">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="suggestionsFrame">
+            <property name="minimumSize">
+             <size>
+              <width>380</width> /* Increased width for better table content display */
+              <height>280</height> /* Increased height */
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>380</width>
+              <height>280</height>
+             </size>
+            </property>
+            <layout class="QVBoxLayout" name="suggestionsFrameLayout">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <property name="leftMargin">
+              <number>15</number>
+             </property>
+             <property name="topMargin">
+              <number>15</number>
+             </property>
+             <property name="rightMargin">
+              <number>15</number>
+             </property>
+             <property name="bottomMargin">
+              <number>15</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="label_2">
+               <property name="text">
+                <string>Suggested Friends</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font-size: 14px; font-weight: 600; color: #ffffff;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="suggestionsHint">
+               <property name="text">
+                <string>Click to add friend</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font-size: 11px; color: #808080;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTableWidget" name="suggestionsTable">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QFrame" name="postsFrame">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>280</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>280</height>
+           </size>
+          </property>
+          <layout class="QVBoxLayout" name="postsFrameLayout">
+           <property name="spacing">
+            <number>15</number>
+           </property>
+           <property name="leftMargin">
+            <number>15</number>
+           </property>
+           <property name="topMargin">
+            <number>15</number>
+           </property>
+           <property name="rightMargin">
+            <number>15</number>
+           </property>
+           <property name="bottomMargin">
+            <number>15</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="postsTitle">
+             <property name="text">
+              <string>Posts</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font-size: 14px; font-weight: 600; color: #ffffff;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="postsTable">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="editTriggers">
+              <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <property name="selectionMode">
+              <enum>QAbstractItemView::NoSelection</enum>
+             </property>
+             <property name="showGrid">
+              <bool>false</bool>
+             </property>
+             <property name="wordWrap">
+              <bool>true</bool>
+             </property>
+             <attribute name="horizontalHeaderVisible">
+              <bool>false</bool>
+             </attribute>
+             <attribute name="verticalHeaderVisible">
+              <bool>false</bool>
+             </attribute>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="newPostLayout">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <item>
+              <widget class="QTextEdit" name="newPost">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>45</height>
+                </size>
+               </property>
+               <property name="placeholderText">
+                <string>What's on your mind?</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="addPostButton">
+<property name="minimumSize">
+             <size>
+              <width>120</width> /* Slightly wider post button */
+              <height>45</height>
+             </size>
+            </property>
+               <property name="text">
+                <string>Post</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">
+QPushButton {
+    background-color: #007bff; /* Standard, slightly more professional blue */
+    font-weight: 600;
+}
+QPushButton:hover {
+    background-color: #0069d9;
+}
+QPushButton:pressed {
+    background-color: #0056b3;
+}
+                </string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="bottomButtonsLayout">
+          <property name="spacing">
+           <number>15</number>
+          </property>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="addFriendButton">
+            <property name="minimumSize">
+             <size>
+              <width>140</width> /* Slightly wider buttons */
+              <height>45</height> /* Consistent button height */
+             </size>
+            </property>
+            <property name="text">
+             <string>Add Friend</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="myProfileButton">
+            <property name="minimumSize">
+             <size>
+              <width>140</width> /* Slightly wider buttons */
+              <height>45</height> /* Consistent button height */
+             </size>
+            </property>
+            <property name="text">
+             <string>My Profile</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
